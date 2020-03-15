@@ -34,7 +34,7 @@ while True:
 http://localhost:5000 
 ```
 
-## 설치
+## 설치및 시작
 ```
 npm install
 npm start
