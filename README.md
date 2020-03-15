@@ -15,6 +15,7 @@ node.js서버, 파이썬 라이브러리, 옵저버페이지
 from Omok import Omok # 서버연결을 위한 라이브러리 추가
 
 omok = Omok.instance()
+omok.join()
 omok.ready()
 
 while True: 
