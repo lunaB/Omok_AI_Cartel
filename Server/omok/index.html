@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>오목시뮬레이터</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <script
+  src="https://code.jquery.com/jquery-3.4.1.min.js"
+  integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+  crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.2.0/socket.io.js"></script>
+    <style>
+        html, body {width: 100%; height: 100%; background-color: #888}
+        #in_game {position: absolute; left: 50%; top: 50%; margin-left: -300px; margin-top: -300px; height: 600px; width: 600px}
+        #popup {width: 100%; height: 100%; background-color: #000; position: relative;}
+        .row {width: 100%; height: 60px; margin: 0px;}
+        .box {width: 60px; height: 60px; box-sizing: border-box; border:2px solid #333}
+    </style>
+</head>
+
+<body>
+    <section id="in_game">
+        <div class="d-flex justify-content-center w-100 h-100" style="align-items: center;">
+            <div id="map" class="w-100 h-100">
+                
+            </div>
+        </div>
+    </section>
+
+    <!-- Modal -->
+    <div class="modal fade" id="gameover" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLongTitle">게임종료</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div id="result" class="modal-body">
+            <h6>Agent - A <span class="badge badge-secondary"></span></h6>
+            <h6>Agent - B <span class="badge badge-secondary"></span></h6>
+          </div>
+          <div class="modal-footer">
+            <button id="analysis_btn" type="button" class="btn btn-secondary">대전 분석</button>
+            <button id="close" type="button" class="btn btn-primary" data-dismiss="modal">닫기</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- You can also require other files to run in this process -->
+    <script src="./static/renderer.js"></script>
+</body>
+</html>
